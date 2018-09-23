@@ -4,7 +4,7 @@ provide(bemDom.declElem('login-form', 'input', {
     onSetMod: {
         js: {
             inited: function() {
-                console.log('input inited')
+                
             }
         }
     }

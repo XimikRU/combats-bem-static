@@ -211,13 +211,13 @@ modules.define('utils', function (provide) {
         
         loginUser: function(username, password) {
             return new Promise((resolve, reject) => {
-                apiRequest('/login', {
+                this.apiRequest('/login', {
                         method: 'POST',
                         body: `username=${username}&password=${password}`
                     })
                     .then(apiAnswer => {
                         if (apiAnswer.status === 'ok' && apiAnswer.user) {
-                            if(setUser(apiAnswer.user)){
+                            if(this.setUser(apiAnswer.user)){
                                 resolve(apiAnswer.user);
                             }
                             else{

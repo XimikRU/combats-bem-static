@@ -14,8 +14,6 @@ module.exports = {
             content: [
                 {
                     elem: 'input',
-                    // TODO: исправить
-                    mix: { block: 'input' },
                     name: 'username',
                     placeholder: 'user'
                 },
