@@ -8,46 +8,42 @@ module.exports = {
         { elem: 'css', url: 'login.min.css' }
     ],
     scripts: [{ elem: 'js', url: 'login.min.js' }],
-    mods: { theme: 'islands' },
     content: [
         {
-            block: 'form',
-            attrs: { style: `
-                left: 50%;
-                position: fixed;
-                top: 50%;
-                -webkit-transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
-            `},
+            block: 'login-form',
             content: [
                 {
-                    block: 'input',
-                    mods: { theme: 'islands', size: 'l', 'has-clear': true },
-                    val: '',
-                    placeholder: 'логин'
+                    elem: 'input',
+                    // TODO: исправить
+                    mix: { block: 'input' },
+                    name: 'username',
+                    placeholder: 'user'
                 },
                 {
-                    block: 'input',
-                    mods: { theme: 'islands', size: 'l', 'has-clear': true },
-                    val: '',
-                    placeholder: 'пароль'
+                    tag: 'br'
                 },
                 {
-                    block: 'br',
-                    html: '<br>'
+                    elem: 'input',
+                    name: 'password',
+                    placeholder: 'pass'
                 },
                 {
-                    block: 'button',
-                    mods: { theme: 'islands', size: 'l' },
-                    text: 'button'
+                    tag: 'br'
                 },
                 {
-                    block: 'button',
-                    mods: { theme: 'islands', size: 'l' },
-                    text: 'button'
+                    elem: 'button',
+                    name: 'login',
+                    value: 'login',
+                    action: 'login'
                 },
+                {
+                    elem: 'button',
+                    name: 'register',
+                    value: 'register',
+                    action: 'register'
+                }
             ]
+            
         }
     ]
 }

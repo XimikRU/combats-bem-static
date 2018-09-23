@@ -1,0 +1,8 @@
+.login-form__input {
+    height: 50px;
+    background-color: #3b4148;
+    color: white;
+    margin-bottom: 1em;
+    padding: 0 16px;
+    width: 245px;
+}
