@@ -8,7 +8,4 @@ block('button')({
             value: ctx.value
         };
     },
-    addMix: [
-        { block: 'input' }
-    ]
 });

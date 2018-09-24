@@ -1,4 +1,4 @@
-modules.define('login-form', ['i-bem-dom', 'utils', 'events', 'button'], function (provide, bemDom, utils, events, button) {
+modules.define('login-form', ['i-bem-dom', 'utils', 'events', 'button', 'input'], function (provide, bemDom, utils, events, button, input) {
 
     provide(bemDom.declBlock(this.name, {
         onSetMod: {
@@ -24,7 +24,8 @@ modules.define('login-form', ['i-bem-dom', 'utils', 'events', 'button'], functio
             originalEvent.preventDefault()
 
             // TODO: получать данные по-другому?
-            const inputs = this.findChildElems('input');
+            const inputs = this.findChildBlocks(input);
+            console.log(inputs)
             const username = inputs.get(0).domElem[0].value;
             const password = inputs.get(1).domElem[0].value;
 
@@ -40,7 +41,7 @@ modules.define('login-form', ['i-bem-dom', 'utils', 'events', 'button'], functio
             console.log('BEM event: login')
             originalEvent.preventDefault()
 
-            const inputs = this.findChildElems('input');
+            const inputs = this.findChildBlocks(input);
             const username = inputs.get(0).domElem[0].value;
             const password = inputs.get(1).domElem[0].value;
 

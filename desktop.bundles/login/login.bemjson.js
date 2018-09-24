@@ -15,7 +15,7 @@ module.exports = {
                 block: 'login-form',
                 content: [
                     {
-                        elem: 'input',
+                        block: 'input',
                         name: 'username',
                         placeholder: 'user'
                     },
@@ -23,7 +23,7 @@ module.exports = {
                         tag: 'br'
                     },
                     {
-                        elem: 'input',
+                        block: 'input',
                         name: 'password',
                         placeholder: 'pass'
                     },

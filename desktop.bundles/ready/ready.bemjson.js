@@ -13,10 +13,11 @@ module.exports = {
             block: 'container',
             content: {
                 block: 'button',
+                mods: { fight: true },
                 value: 'fight',
                 name: 'fight',
                 action: 'fight',
-                type: 'button'
+                type: 'button',
             }
         }
     ]

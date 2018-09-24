@@ -9,13 +9,14 @@ provide(bemDom.declBlock(this.name,
                     this._action = this.getAction(); // Получение action кнопки из JS параметра
                     this._domEvents().on('click', this._onClick); // обработчик ДОМ события "click"
                 }
-            }
+            },
         },
 
         _onClick: function(originalEvent) {
             originalEvent.preventDefault(); // отключаем отправку формы
 
             var event = new events.Event(this._action); 
+            console.log('event created: ', event)
             this._emit(event); // создание БЭМ-события "action"
         },
         
@@ -24,7 +25,7 @@ provide(bemDom.declBlock(this.name,
         },
     },
     {
-        lazyInit : false,
+        lazyInit : true,
     }
 ));
 

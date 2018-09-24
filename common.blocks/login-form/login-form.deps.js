@@ -1,6 +1,7 @@
 ({
     shouldDeps: [
         'utils',
-        'button'
+        'button',
+        'input'
     ]
 })
