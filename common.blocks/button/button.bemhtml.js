@@ -1,4 +1,4 @@
-block('login-form').elem('button')({
+block('button')({
     tag: 'input',
     addJs: (node, ctx) => ({ action: ctx.action }),
     addAttrs: (node, ctx) => {
@@ -9,7 +9,6 @@ block('login-form').elem('button')({
         };
     },
     addMix: [
-        { block: 'button' },
         { block: 'input' }
     ]
 });

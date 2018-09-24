@@ -1,4 +1,4 @@
-modules.define('login-form__button', ['i-bem-dom', 'events'], function(provide, bemDom, events) {
+modules.define('login-form__button', ['i-bem-dom', 'events', 'button'], function(provide, bemDom, events, button) {
 
 provide(bemDom.declElem('login-form', 'button', {
     onSetMod: {

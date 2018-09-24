@@ -1,4 +1,4 @@
-modules.define('login-form', ['i-bem-dom', 'utils', 'events'], function (provide, bemDom, utils, events) {
+modules.define('login-form', ['i-bem-dom', 'utils', 'events', 'button'], function (provide, bemDom, utils, events, button) {
 
     provide(bemDom.declBlock(this.name, {
         onSetMod: {
@@ -9,16 +9,16 @@ modules.define('login-form', ['i-bem-dom', 'utils', 'events'], function (provide
                     var login = new events.Event('login');
 
                     // TODO: подключить button и явно передавать
-                    this._events(this.findChildBlocks({ elem: 'button' }))
+                    this._events(this.findChildBlocks(button))
                         .on(register, this._onRegister)
                         .on(login, this._onLogin)
                 }
             }
         },
 
-        // TODO: объединить register+login?
+        // TODO: Можно если передать через data event-a?
         _onRegister: function (originalEvent) {
-            console.log('BEM event: register')
+            console.log('BEM event: register', originalEvent)
 
             // TODO: отключать на все события?
             originalEvent.preventDefault()
@@ -31,9 +31,9 @@ modules.define('login-form', ['i-bem-dom', 'utils', 'events'], function (provide
             utils.registerUser(username, password)
                 .then(user => {
                     // TODO: redirect
+                    window.location = '../ready/ready.html';
                     console.log('register: ', user);
                 })
-
         },
 
         _onLogin: function (originalEvent) {
@@ -46,10 +46,10 @@ modules.define('login-form', ['i-bem-dom', 'utils', 'events'], function (provide
 
             utils.loginUser(username, password)
                 .then(user => {
+                    window.location = '../ready/ready.html';
                     console.log('login: ', user);
                 })
-
-        },
+        }
 
     }, {
         lazyInit: false,

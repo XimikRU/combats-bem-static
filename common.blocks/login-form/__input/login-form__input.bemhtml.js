@@ -10,5 +10,5 @@ block('login-form').elem('input')(
     // addMods()(),
     // content()(),
     // TODO: так и должно быть?
-    addMix()({ block: 'input'})
+    //addMix()({ block: 'input'})
 );

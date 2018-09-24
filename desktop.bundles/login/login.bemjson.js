@@ -10,38 +10,42 @@ module.exports = {
     scripts: [{ elem: 'js', url: 'login.min.js' }],
     content: [
         {
-            block: 'login-form',
-            content: [
-                {
-                    elem: 'input',
-                    name: 'username',
-                    placeholder: 'user'
-                },
-                {
-                    tag: 'br'
-                },
-                {
-                    elem: 'input',
-                    name: 'password',
-                    placeholder: 'pass'
-                },
-                {
-                    tag: 'br'
-                },
-                {
-                    elem: 'button',
-                    name: 'login',
-                    value: 'login',
-                    action: 'login'
-                },
-                {
-                    elem: 'button',
-                    name: 'register',
-                    value: 'register',
-                    action: 'register'
-                }
-            ]
-            
+            block: 'container',
+            content: {
+                block: 'login-form',
+                content: [
+                    {
+                        elem: 'input',
+                        name: 'username',
+                        placeholder: 'user'
+                    },
+                    {
+                        tag: 'br'
+                    },
+                    {
+                        elem: 'input',
+                        name: 'password',
+                        placeholder: 'pass'
+                    },
+                    {
+                        tag: 'br'
+                    },
+                    {
+                        block: 'button',
+                        name: 'login',
+                        value: 'login',
+                        action: 'login',
+                        type: 'submit',
+                    },
+                    {
+                        block: 'button',
+                        name: 'register',
+                        value: 'register',
+                        action: 'register',
+                        type: 'submit'
+                    }
+                ]
+            }  
         }
     ]
 }
